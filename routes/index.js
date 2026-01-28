@@ -123,7 +123,7 @@ router.post("/voyages/addtocart", async (req, res) => {
 //POST pour envoyer les voyages du cart vers la partie book
 
 router.post("/voyages/addtobook", async (req, res) => {
-  
+
   try {
     const { voyageId } = req.body;
 
@@ -269,7 +269,7 @@ router.post("/voyages/deletefrombook", async (req, res) => {
 
     // Met à jour isBooked
     const result = await Voyage.updateMany(
-      { isBooked : true },
+      { isBooked: true },
       { $set: { isBooked: false } },
     );
 
@@ -290,6 +290,10 @@ router.post("/voyages/deletefrombook", async (req, res) => {
 router.get("/voyagesAll", async (req, res) => {
   const voyages = await Voyage.find()
   return res.status(200).json(voyages);
+})
+
+router.get("/voyagesAll", async (req, res) => {
+  return res.status(200).send("Hello!!!!!!!");
 })
 
 module.exports = router;
