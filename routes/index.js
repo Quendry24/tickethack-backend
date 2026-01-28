@@ -292,7 +292,7 @@ router.get("/voyagesAll", async (req, res) => {
   return res.status(200).json(voyages);
 })
 
-router.get("/voyagesAll", async (req, res) => {
+router.get("/test", async (req, res) => {
   return res.status(200).send("Hello!!!!!!!");
 })
 
